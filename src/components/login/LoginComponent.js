@@ -1,5 +1,6 @@
 import React from "react";
 import InputField from "../InputField";
+import SubmitButton from "../SubmitButton";
 
 function LoginComponent() {
     return(
@@ -11,7 +12,9 @@ function LoginComponent() {
                 <form>
                     <InputField type="text" placeholder="Email" />
                     <InputField type="password" placeholder="Password" />
-                    <InputField type="submit" placeholder="Login" />
+                    <div className="LoginButtonComponent">
+                        <SubmitButton  text="Log in" className="LoginButton"/>
+                    </div>
                 </form>
                 <div className="RegisterHeading">
                     <p>Don't have an account?</p>

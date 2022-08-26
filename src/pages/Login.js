@@ -1,8 +1,13 @@
 import LoginComponent from "../components/login/LoginComponent";
+import Footer from "../components/Footer";
 
 function Login() {
     return(
-        <LoginComponent />
+        <><div className="Login">
+            <LoginComponent />
+        </div><div className="Footer">
+                <Footer />
+            </div></>
     );
 }
 

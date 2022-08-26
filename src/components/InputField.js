@@ -5,7 +5,7 @@ function InputField(props) {
     console.log(props)
     return(
         <div className="InputField">
-            <input type={props.type} placeholder={props.placeholder}></input>
+            <input className="Input" type={props.type} placeholder={props.placeholder}></input>
         </div>
     );
 }

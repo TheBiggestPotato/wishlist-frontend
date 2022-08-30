@@ -29,7 +29,7 @@ function Footer(props) {
     return(
         <div className="footer">
   <ul className="ul-footer">
-    { links.map((link, key) => <li><a key={ key } className="ul-footer" href={ link.href }>{ link.Name }</a></li>) }
+    { links.map((link, key) => <li key={ key }><a key={ key } className="ul-footer" href={ link.href }>{ link.Name }</a></li>) }
   </ul>
 </div>
     );

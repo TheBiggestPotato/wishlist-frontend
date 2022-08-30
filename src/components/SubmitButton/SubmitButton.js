@@ -4,7 +4,7 @@ import "./SubmitButton.css"
 function SubmitButton(props) {
 
     return(
-        <button className={props.className}>{props.text}</button>
+        <button className="submit">{props.text}</button>
     );
 }
 

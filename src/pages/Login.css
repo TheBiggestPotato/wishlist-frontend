@@ -1,0 +1,46 @@
+/* Login Logo */
+.login-logo {
+    text-align: center;
+}
+  
+.login-form {
+    text-align: center;
+      background-color: #fff;
+      border-radius: 10px;
+      max-width: 100%;
+      min-height: 480px;
+    height: 100%;
+      transition: all 0.6s ease-in-out;
+}
+  
+.login-component {
+    text-align: center;
+}
+
+/* Register Heding*/
+
+.register-heading {
+    text-align: center;
+}
+
+.register-link {
+    color: black;
+    text-decoration: none;
+    box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
+}
+
+.register-link:hover {
+    color: orange;
+}
+  
+/* Login Button */
+  
+.login-button {
+    margin-top:100px;
+    margin-bottom: 100px;
+}
+  
+.login-button-component {
+    text-align: center;
+}
+  

@@ -1,0 +1,7 @@
+.input {
+	background-color: var(--app-gray);
+	border: none;
+	padding: 12px 8px;
+	margin: 8px 0;
+	width: 20%;
+}

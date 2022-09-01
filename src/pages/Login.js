@@ -9,7 +9,7 @@ function Login() {
     const logo_src = `${process.env.PUBLIC_URL}/logo.png`
 
     return(
-        <><div className="login-component">
+        <div className="login-component">
             <div className="login-logo">
                 <img src= { logo_src } />
             </div>
@@ -26,7 +26,7 @@ function Login() {
                     <a className="register-link" href="">Register here!</a>
                 </div>
             </div>
-        </div></>
+        </div>
     );
 }
 

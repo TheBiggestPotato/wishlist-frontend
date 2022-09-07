@@ -2,16 +2,15 @@
 import InputField from "../components/InputField/InputField"
 import SubmitButton from "../components/SubmitButton/SubmitButton"
 import { Link } from "react-router-dom";
+import { logoSrc } from "./constants.js"
 import "./Login.css"
 
 function Login() {
 
-    const logo_src = `${process.env.PUBLIC_URL}/logo.png`;
-
     return(
         <><div className="login-component">
             <div className="login-logo">
-                <img src= { logo_src } />
+                <img src= { logoSrc } />
             </div>
             <div className="login-form">
                 <form>

@@ -2,10 +2,13 @@ import React  from "react";
 import "./InputField.css"
 
 function InputField(props) {
-    console.log(props)
+
+    const type = props.type;
+    const placeholder = props.placeholder;
+
     return(
         <div className="input-field">
-            <input className="input" type={props.type} placeholder={props.placeholder}></input>
+            <input className="input" type={ type } placeholder={ placeholder }></input>
         </div>
     );
 }

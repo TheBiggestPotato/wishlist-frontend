@@ -32,3 +32,32 @@ export const registerInputFields = [
 // Home Page
 
 export const buttonTexts = [ 'Create List', 'Create Group', 'Join Group'];
+
+
+// Profile Page
+
+export const publicParams = [
+    {
+        type: 'text',
+        placeholder: 'Full Name'
+    },
+    {
+        type: 'text',
+        placeholder: 'Email'
+    },
+    {
+        type: 'tel',
+        placeholder: 'Phone'
+    }
+];
+
+export const passParams = [
+    {
+        type: 'password',
+        placeholder: 'New Password'
+    },
+    {
+        type: 'password',
+        placeholder: 'Confirm Password'
+    }
+]

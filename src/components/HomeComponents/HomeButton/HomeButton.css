@@ -1,0 +1,22 @@
+.home-button {
+    border: none;
+    background-color: var(--app-gray);
+    height: 80px;
+    width:180px;
+    cursor:pointer;
+    font-weight: bold;
+    font-family: Menlo, monospace;
+}
+
+.home-button-container {
+    padding: 2%;
+}
+
+.home-button:hover {
+    background-color: orange;
+    transition: all 0.2s ease-out;
+}
+
+.home-button:active {
+	transform: scale(0.95);
+}

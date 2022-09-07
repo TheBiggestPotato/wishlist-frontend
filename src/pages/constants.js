@@ -1,5 +1,7 @@
 export const logoSrc = `${process.env.PUBLIC_URL}/assets/logo.png`;
 
+// Register Page
+
 export const registerInputFields = [
     {
         type: "text",
@@ -26,3 +28,7 @@ export const registerInputFields = [
         placeholder: "Confirm Password"
     }
 ];
+
+// Home Page
+
+export const buttonTexts = [ 'Create List', 'Create Group', 'Join Group'];

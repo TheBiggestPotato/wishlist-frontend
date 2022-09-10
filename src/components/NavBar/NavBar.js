@@ -2,16 +2,23 @@ import './NavBar.css'
 import { MenuItems, logo_src } from './NavBar.constants.js'
 import NavButton from './Button/NavBar.button';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 function NavBar() {
 
-   let state = { clicked: false }
+   const state = { clicked: false }
 
    const [clicked , setClicked] = useState(state);
 
+   const navigate = useNavigate();
+
    const handleClick = () => {
     setClicked(state.clicked = !state.clicked)
+   }
+
+   const loginOnClick = () => {
+    navigate('/login')
    }
 
     return(
@@ -35,7 +42,7 @@ function NavBar() {
                 ); 
             })}
         </ul>
-        <NavButton className='nav-button' text='Log in'></NavButton>
+        <NavButton className='nav-button' text='Log in' onClick={ loginOnClick }></NavButton>
        </nav> 
     );
 }

@@ -2,30 +2,37 @@ export const logoSrc = `${process.env.PUBLIC_URL}/assets/logo.png`;
 
 // Register Page
 
+
 export const registerInputFields = [
     {
         type: "text",
-        placeholder: "Full Name"
+        placeholder: "Full Name",
+        id: 'nameField'
     },
     {
         type: "text",
-        placeholder: "Email"
+        placeholder: "Email",
+        id: 'emailField'
     },
     {
         type: "tel",
-        placeholder: "Phone Number"
+        placeholder: "Phone Number",
+        id: 'phoneField'
     },
     {
         type: "date",
-        placeholder: "Date of birth"
+        placeholder: "Date of birth",
+        id: 'dateField'
     },
     {
         type: "password",
-        placeholder: "Password"
+        placeholder: "Password",
+        id: 'passField'
     },
     {
         type: "password",
-        placeholder: "Confirm Password"
+        placeholder: "Confirm Password",
+        id: 'confPassField'
     }
 ];
 

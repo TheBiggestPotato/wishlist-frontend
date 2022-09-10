@@ -4,10 +4,11 @@ import './HomeButton.css'
 function HomeButton(props) {
 
     const buttonText = props.buttonText;
+    const onClick = props.onClick
 
     return(
         <div className='home-button-container'>
-            <button className='home-button'>{ buttonText }</button>
+            <button className='home-button' onClick={ onClick }>{ buttonText }</button>
         </div>
     );
 }

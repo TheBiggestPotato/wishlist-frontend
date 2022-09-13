@@ -10,6 +10,7 @@
 
 .home-button-container {
     padding: 2%;
+    text-align: center;
 }
 
 .home-button:hover {

@@ -1,12 +1,12 @@
 
-import Footer from "../components/Footer/Footer";
 import InputField from "../components/InputField/InputField"
 import SubmitButton from "../components/SubmitButton/SubmitButton"
+import { Link } from "react-router-dom";
 import "./Login.css"
 
 function Login() {
 
-    const logo_src = `${process.env.PUBLIC_URL}/logo.png`
+    const logo_src = `${process.env.PUBLIC_URL}/logo.png`;
 
     return(
         <div className="login-component">
@@ -23,7 +23,7 @@ function Login() {
                 </form>
                 <div className="register-heading">
                     <p>Don't have an account?</p>
-                    <a className="register-link" href="">Register here!</a>
+                    <Link className="register-link" to="/register">Register here!</Link>
                 </div>
             </div>
         </div>

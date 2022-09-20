@@ -1,4 +1,4 @@
-.login-button {
+.submit {
 	border-radius: 20px;
 	border: 1px solid var(--app-gray);
 	background-color: var(--app-gray);
@@ -11,15 +11,15 @@
 	transition: transform 80ms ease-in;
 }
 
-.login-button:active {
+.submit:active {
 	transform: scale(0.95);
 }
 
-.login-button:focus {
+.submit:focus {
 	outline: none;
 }
 
-.login-button.ghost {
+.submit.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
 }

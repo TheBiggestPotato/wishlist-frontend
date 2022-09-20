@@ -7,7 +7,7 @@ All in all, as my first React project and experience, I can say that it was chal
 
 ## Installation 
 
-After pulling the repo locally, an `npm install` command should be used in the project directory.
+After pulling the repo locally, an `npm install` command should be used in the project directory
 .then(`npm start`)
 
 ### Usage

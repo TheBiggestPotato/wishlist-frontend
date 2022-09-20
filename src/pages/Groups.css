@@ -1,0 +1,55 @@
+.create-group-btn {
+    text-align: center;
+    font-family: Menlo, monospace;
+}
+
+.groups-container {
+    text-align: center;
+    font-family: Menlo, monospace;
+    background-color: var(--app-gray);
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+
+.groups-invitations {
+    text-align: center;
+    font-family: Menlo, monospace;
+}
+
+.create-group-btn{
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-family: Menlo, monospace;
+}
+
+.shared-groups {
+    text-align: center;
+    font-family: Menlo, monospace;
+    background-color: var(--app-gray);
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+}
+
+li {
+    text-align: center;
+}
+
+a:visited {
+    color:black;
+}
+
+a {
+    text-decoration:none;
+    color:black;
+}
+
+h1 {
+    text-align: center;
+    font-family: Menlo, monospace;
+}

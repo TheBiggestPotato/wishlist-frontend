@@ -1,0 +1,18 @@
+.profile-header {
+    font-family: Menlo, monospace;
+}
+
+.logout-button-container {
+    padding: 2%;
+}
+
+.edit-profile-page-container {
+    text-align: center;
+}
+.change-data {
+    padding: 2%;;
+}
+
+.form-button{
+    padding-top: 1.5%;
+}

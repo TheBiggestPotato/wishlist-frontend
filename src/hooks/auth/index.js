@@ -1,49 +1,21 @@
-import { createContext, useContext, useMemo } from "react";
-import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { createContext, useState } from "react";
 
-const UserContext = createContext();
+const AuthContext = createContext();
 
-export const UserProvider = ({ children }) => {
-  const navigate = useNavigate();
-  const [cookies, setCookies, removeCookie] = useCookies();
+const useAuth = () => {
+  return useContext(AuthContext);
+};
 
-  const loginUser = async (data) => {
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    };
+const AuthProvider = (props) => {
+  const [token, setToken] = useState();
+  const [isLogged, setLogged] = useState(0);
 
-    await fetch(
-      "http://ec2-18-217-234-99.us-east-2.compute.amazonaws.com:8080/v1/login",
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((data) => setCookies("token", data.token));
-
-    console.log(cookies);
-
-    navigate("/home");
-  };
-
-  const logout = () => {
-    ["token"].forEach((obj) => removeCookie(obj)); // remove data save in cookies
-    navigate("/login");
-  };
-
-  const value = useMemo(
-    () => ({
-      cookies,
-      loginUser,
-      logout,
-    }),
-    [cookies]
+  return (
+    <AuthContext.Provider value={{ token, setToken, isLogged, setLogged }}>
+      {props.children}
+    </AuthContext.Provider>
   );
-
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
 
-export const useAuth = () => {
-  return useContext(UserContext);
-};
+export { AuthContext, AuthProvider, useAuth };

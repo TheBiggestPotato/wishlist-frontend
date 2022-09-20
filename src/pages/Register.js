@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { registerInputFields, logoSrc } from "./constants";
 import { useState } from "react";
 import "./Register.css";
+import { register } from "../api";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}/;
 
@@ -36,28 +37,14 @@ function Register() {
     return false;
   }
 
-  function RegisterOnClick() {
+  async function RegisterOnClick() {
     const passCheck = ValidatePass();
     const mailCheck = ValidateEmail();
 
     const data = { email, password, dob, name, phone };
 
     if (passCheck && mailCheck) {
-      const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      };
-      fetch(
-        "http://ec2-18-217-234-99.us-east-2.compute.amazonaws.com:8080/v1/register",
-        requestOptions
-      ).then((response) => {
-        response.json();
-        console.log(response);
-        console.log("Success!");
-      });
-
-      navigate("/home");
+      await register(data).then(navigate("/login"));
     }
     console.log(data);
   }

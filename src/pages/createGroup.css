@@ -1,0 +1,15 @@
+.create-group-container{
+    text-align: center;
+}
+
+.text-area {
+   text-align: center;
+   margin: 2%;
+}
+
+.group-description{
+    background-color: var(--app-gray);
+    border: none;
+    outline: none;
+    resize: none;
+}

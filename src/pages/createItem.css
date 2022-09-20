@@ -1,0 +1,15 @@
+.create-item-container{
+    text-align: center;
+}
+
+.text-area {
+   text-align: center;
+   margin: 2%;
+}
+
+.item-description{
+    background-color: var(--app-gray);
+    border: none;
+    outline: none;
+    resize: none;
+}

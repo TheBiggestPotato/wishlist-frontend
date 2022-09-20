@@ -1,0 +1,27 @@
+.list-item-title {
+    text-decoration: none;
+    font-family: Menlo, monospace;
+}
+
+a{
+    text-decoration: none;
+}
+
+.list-item-description {
+    text-decoration: none;
+    font-family: Menlo, monospace;
+}
+
+.list-item {
+    text-align: center;
+    margin: 3%;
+    background-color: var(--app-gray);
+}
+
+a:visited {
+    color:black;
+}
+
+a {
+    color:black;
+}

@@ -1,16 +1,11 @@
-import { type } from "@testing-library/user-event/dist/type/index.js";
-import { Outlet, useNavigate } from "react-router-dom";
-import { useAuth } from "../auth/index.js";
+import { Navigate, Outlet, Route } from "react-router-dom";
+import { useAuthContext } from "../auth";
+import Login from "../../pages/Login";
 
-export const ProtectRoutes = () => {
-  const { cookies } = useAuth();
+const ProtectedRoutes = () => {
+  const isLogged = parseInt(sessionStorage.getItem("isLogged"));
 
-  const navigate = useNavigate();
-  console.log(cookies);
-  if (typeof cookies.token !== "undefined") {
-    return <Outlet />;
-  } else {
-    return navigate("/login");
-  }
-  //   return cookies.token ? <Outlet /> : <Navigate to="/login" exact />;
+  return isLogged ? <Outlet /> : <Login />;
 };
+
+export default ProtectedRoutes;

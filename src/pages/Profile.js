@@ -1,45 +1,55 @@
-import "./Profile.css";
-import { publicParams, passParams } from "./constants";
-import ProfileForm from "../components/ProfileForm/ProfileForm";
+import React, { useState } from "react";
+import { myDetails } from "../api";
 import NavBar from "../components/NavBar/NavBar";
 import SubmitButton from "../components/SubmitButton/SubmitButton";
-import { useAuth } from "../hooks/auth/index.js";
+import Footer from "../components/Footer/Footer";
+import "./Profile.css";
+import { useNavigate } from "react-router-dom";
 
-function ProfilePage(props) {
-  const name = props.name;
-
-  const { logout } = useAuth();
+function Profile() {
+  const navigate = useNavigate();
 
   function handleClick() {
-    logout();
+    navigate("/profile/edit");
   }
 
+  const token = sessionStorage.getItem("token");
+
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [birthday, setBirthday] = useState();
+  const [phone, setPhone] = useState();
+
+  async function getProfileData() {
+    let data = await myDetails(token);
+    console.log(data.id);
+
+    let [dob] = data.dob.split("T");
+
+    setName(data.name);
+    setEmail(data.email);
+    setBirthday(dob);
+    setPhone(data.phone);
+  }
+  getProfileData();
   return (
     <div className="container">
       <NavBar />
-      <div className="profile-header">
-        <h1 className="your-profile">Your Profile</h1>
-        <h2 className="your-name">`${name}`</h2>
-      </div>
-      <ProfileForm
-        params={publicParams}
-        btnTxt="Save Changes"
-        btnClass="save-changes-button form-button"
-      />
-      <ProfileForm
-        params={passParams}
-        btnTxt="Save Password"
-        btnClass="save-password-button form-button"
-      />
-      <div className="logout-button-container">
+      <div className="profile-container">
+        <h1 className="header">Your Profile</h1>
+        <h2 className="name">Full Name: {name}</h2>
+        <h2 className="email">Email: {email}</h2>
+        <h2 className="birthday">Date of Birth: {birthday}</h2>
+        <h2 className="phone">Phone Number: {phone}</h2>
         <SubmitButton
-          text="Log out"
-          className="logout-button"
+          className="edit-profile"
+          text="Edit Profile"
           onClick={handleClick}
-        />
+        ></SubmitButton>
       </div>
+      <Footer />
     </div>
   );
 }
 
-export default ProfilePage;
+export default Profile;

@@ -3,36 +3,48 @@ import SubmitButton from "../components/SubmitButton/SubmitButton";
 import { Link, useNavigate } from "react-router-dom";
 import { logoSrc } from "./constants.js";
 import "./Login.css";
-import React, { useState, useContext } from "react";
-import { useAuth } from "../hooks/auth";
+import React, { useState } from "react";
+import { loginUser } from "../api/index.js";
+import { useAuth } from "../hooks/auth/index.js";
+import Footer from "../components/Footer/Footer.js";
 
 function Login() {
-  const navigate = useNavigate();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { setToken, setLogged } = useAuth();
+
+  const navigate = useNavigate();
+
   function emailOnChange(e) {
     setEmail(e.target.value);
-    console.log(e.target.value);
   }
   function passwordOnChange(e) {
     setPassword(e.target.value);
-    console.log(e.target.value);
   }
-
-  const { loginUser } = useAuth();
 
   async function handleClick() {
     const data = { email, password };
 
-    loginUser(data);
+    await loginUser(data).then(() => {
+      const token = sessionStorage.getItem("token");
+      const isLogged = sessionStorage.getItem("isLogged");
+      if (token !== "undefined") {
+        console.log(token);
+        console.log(isLogged);
+        setToken(token);
+        setLogged(1);
+        navigate("/home");
+      } else {
+        alert("Invalid email or password!");
+      }
+    });
   }
 
   return (
     <div className="login-component">
       <div className="login-logo">
-        <img src={logoSrc} />
+        <img src={logoSrc} alt="logo" />
       </div>
       <div className="login-form">
         <form>
@@ -61,6 +73,7 @@ function Login() {
           </Link>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

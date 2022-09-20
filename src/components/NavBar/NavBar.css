@@ -1,0 +1,151 @@
+.navbar-items {
+    background: var(--app-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns:  repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    justify-content: end;
+    margin-right: 2px;
+    width: 70vw;
+}
+
+.navbar-link {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-link:hover {
+    color: orange;
+    transition: all 0.2s ease-out;
+}
+
+.fa-bars {
+    color: black
+
+}
+
+.navbar-link-mobile {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.nav-button {
+	border-radius: 20px;
+	border: 1px solid orange;
+	background-color: orange;
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	font-family: Menlo, monospace;
+}
+
+
+.nav-button:active {
+	transform: scale(0.95);
+}
+
+.nav-button:focus {
+	outline: none;
+}
+
+.nav-button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+
+@media screen and (max-width: 960px) {
+    .navbar-items {
+        position: relative;
+        text-align: center;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 500px;
+        position: absolute;
+        top: 80px;
+        left: -150%;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-menu.active {
+        background-color: var(--app-gray);
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .navbar-link {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    .navbar-link:hover {
+        color: orange;
+        transition: all 0.2s ease-out;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform:  translate(-100%, 60%);
+        cursor: pointer;
+    }
+
+    .fa-times {
+        color: black;
+    }
+
+    .navbar-link-mobile {
+        display: block;
+        text-align: center;
+        padding: 1.5rem;
+        margin: 2rem auto;
+        border-radius: 4px;
+        width: 80%;
+        background: orange;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+    
+    .navbar-link-mobile:active {
+        transform: scale(0.95);
+    }
+    
+    .navbar-link-mobile:focus {
+        outline: none;
+    }
+
+    .navbar-link-mobile.ghost {
+        background-color: transparent;
+        border-color: #FFFFFF;
+    }
+
+    .nav-button {
+        display: none;
+    }
+}

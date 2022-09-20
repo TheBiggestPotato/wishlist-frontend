@@ -1,0 +1,28 @@
+.header {
+    font-family: Menlo, monospace;
+    padding: 1.5%;
+}
+.email {
+    font-family: Menlo, monospace;
+    padding: 1.5%;
+}
+.birthday {
+    font-family: Menlo, monospace;
+    padding: 1.5%;
+}
+.phone {
+    font-family: Menlo, monospace;
+    padding: 1.5%;
+}
+.name {
+    font-family: Menlo, monospace;
+    padding: 1.5%;
+}
+
+.edit-profile {
+    padding: 1.5%;
+}
+
+.profile-container {
+    text-align: center;
+}

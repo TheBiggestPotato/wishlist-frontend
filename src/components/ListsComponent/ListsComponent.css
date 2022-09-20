@@ -1,0 +1,14 @@
+.public-data {
+    text-align: center;
+    list-style: none;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+a:visited {
+    color:black;
+}
+
+a {
+    color:black;
+}

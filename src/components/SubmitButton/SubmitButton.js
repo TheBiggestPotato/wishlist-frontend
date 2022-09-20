@@ -3,8 +3,10 @@ import "./SubmitButton.css"
 
 function SubmitButton(props) {
 
+    const onClick = props.onClick;
+
     return(
-        <button className="submit">{props.text}</button>
+        <button className="submit" onClick={ onClick } type='button'>{props.text}</button>
     );
 }
 
